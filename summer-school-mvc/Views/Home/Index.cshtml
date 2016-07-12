@@ -1,23 +1,21 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<div class="jumbotron">
+@*<div class="jumbotron">
     <h1>STUDENT ENROLLMENT</h1>
-    <p class="lead">& REGISTRATION DATABASE</p>
-</div>
+    <p class="lead">REGISTRATION DATABASE</p>
+</div>*@
 
 <div class="row">
     <div class="col-md-6">
-        <h2 class="registration">@Html.ActionLink("Registration","Index","Students")</h2>
+        <h2 class="registration">@Html.ActionLink("Registration","Create","Students")</h2>
         <p>Register a new student.</p>
         <p>Update current student's information.</p>
         <p>Unenroll current student.</p>
 
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-6">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>@Html.ActionLink("View Current List", "Index", "Students")</h2>
+        <p>View and edit list of enrolled students</p>
     </div>
 </div>

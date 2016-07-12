@@ -1,6 +1,6 @@
 ﻿body {
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -25,12 +25,11 @@ textarea {
 .jumbotron{
     background-image:url(../Images/Blurrybooks.jpg);
     background-position:bottom;
-    height:300px;
+    height:200px;
     text-align:center;
     color: white;
-    margin-right:-104px;
-    margin-left:-104.5px !important;
     border-radius:0px !important;
+    overflow:hidden;
 }
 .jumbotron h1{
     font-weight:bold;
@@ -51,5 +50,9 @@ h2 .registration, a:hover{
 }
 p, #about{
     line-height:30px;
+}
+.menuRight{
+    padding-left:25px !important;
+    padding-right:25px !important;
 }
 

@@ -55,4 +55,13 @@ p, #about{
     padding-left:25px !important;
     padding-right:25px !important;
 }
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 0px;
+  background-color: #e9e9e9;
+  padding-left:20px;
+}
 

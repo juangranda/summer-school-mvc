@@ -50,13 +50,18 @@ namespace summer_school_mvc.Controllers
         //public ActionResult Create([Bind(Include = "StudentID,FirstName,LastName,EnrollmentFee")] Student student)
         public ActionResult Create([Bind(Include = "StudentID,FirstName,LastName")] Student student)
         {
+            student.EnrollmentFee = 200;
             int checkCount = db.Students.Count();
 
+            if ((student.FirstName.ToLower()).First() == (student.LastName.ToLower()).First())
+            {
+                student.EnrollmentFee = Convert.ToInt32(student.EnrollmentFee * .9);
+            }
             if ((student.LastName.ToLower()).Contains("potter"))
             {
-                student.EnrollmentFee = 100;
+                student.EnrollmentFee = Convert.ToInt32(student.EnrollmentFee * .5);
             }
-            else if ((student.LastName.ToLower()).Contains("longbottom"))
+            if ((student.LastName.ToLower()).Contains("longbottom"))
             {
                 if (checkCount < 4)
                 {
@@ -64,16 +69,8 @@ namespace summer_school_mvc.Controllers
                 }
                 else
                 {
-                    student.EnrollmentFee = 200;
+                    student.EnrollmentFee = Convert.ToInt32(student.EnrollmentFee);
                 }
-            }
-            else if ((student.FirstName.ToLower()).First() == (student.LastName.ToLower()).First())
-            {
-                student.EnrollmentFee = 180;
-            }
-            else
-            {
-                student.EnrollmentFee = 200;
             }
 
             if (ModelState.IsValid)

@@ -1,6 +1,10 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 0px;
+    /*padding-top: 50px;
+    padding-bottom: 0px;*/
+    margin-bottom:0px;
+    /*background-color: #1E1E1E;*/
+    background-color: white;
+        height:100%;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -45,8 +49,10 @@ h2 .registration, a:hover{
     text-align:center;
 }
 .navbar{
-        border-top:1px solid;
-    border-color:black;
+    border-top:2px solid;
+    border-bottom:2px solid;
+    border-color:#1E1E1E;
+    background-color: rgba(1,1,1,.7)
 }
 p, #about{
     line-height:30px;
@@ -56,12 +62,13 @@ p, #about{
     padding-right:25px !important;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
+  margin-bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 0px;
+  /*height: 40px;*/
   background-color: #e9e9e9;
   padding-left:20px;
 }
+
+
 

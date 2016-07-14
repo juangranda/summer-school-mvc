@@ -22,7 +22,7 @@ namespace summer_school_mvc.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "24/7 Customer support.";
 
             return View();
         }

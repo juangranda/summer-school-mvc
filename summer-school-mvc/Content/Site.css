@@ -1,16 +1,26 @@
-﻿body {
+﻿*{
+                    color:#AAA;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+html, body {
     /*padding-top: 50px;
     padding-bottom: 0px;*/
     margin-bottom:0px;
     /*background-color: #1E1E1E;*/
-    background-color: white;
-        height:100%;
+    background-color: black;
+        display:block;
+                height:100%;
+                color:#AAA;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    padding-top:50px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -26,7 +36,7 @@ select,
 textarea {
     max-width: 280px;
 }
-.jumbotron{
+.jumbotron1{
     background-image:url(../Images/Blurrybooks.jpg);
     background-position:bottom;
     height:200px;
@@ -39,8 +49,10 @@ textarea {
     font-weight:bold;
 }
 h2 .registration, a{
-    color:darkgrey;
+    color: #AAA;
     text-decoration:none !important;
+        font-size:11px;
+    letter-spacing:4px;
 }
 h2 .registration, a:hover{
     color:darkgrey;
@@ -52,7 +64,6 @@ h2 .registration, a:hover{
     border-top:2px solid;
     border-bottom:2px solid;
     border-color:#1E1E1E;
-    background-color: rgba(1,1,1,.7)
 }
 p, #about{
     line-height:30px;
@@ -69,6 +80,62 @@ p, #about{
   background-color: #e9e9e9;
   padding-left:20px;
 }
+.bbb {
+    background-image: url('../Images/Black_background.jpg');
+    position:absolute;
+        top: 0;
+    left: 0;
+    right: 0;
+    height:inherit;
+    opacity:.2;
+}
+.ccc{
+    z-index:80;
+}
+.jumbotron{
+    /*background-image:url('../Images/Blurrybooks.jpg');
+    background-size:cover;*/
+}
 
+.hero-unit{
+    display:block;
+    position:absolute;
+        width: 100%;
+    height: 100%;
+        min-height:100%;
+    background-color:black;
+    color:white;
+/*background-image:url('../Images/Blurrybooks.jpg');*/
+    background-size:cover;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.pageTitle{
+    display:block;
+    text-align:center;
+    font-size:18px;
+    letter-spacing:6px;
+    margin-top:200px;
+    color: #AAAABB;
+}
+.indexOptions{
+    width:100%;
+    display:inline;
+    color:#AAA;
+    font-size:11px;
+    letter-spacing:4px;
+    text-align:center;
+    white-space:normal;
+}
+h4{
+        color: #AAA;
+        /*font-size:11px;*/
+    letter-spacing:4px;
+}
+#newEnrollment{
+    padding-top:30px;
+}
+.form-control{
+    background-color:#272727;
+}
 
 

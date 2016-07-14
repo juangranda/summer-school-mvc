@@ -9,43 +9,60 @@
 
 </head>
 <body>
-    <div class="container">
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("HOME", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <div class="hero-unit">
+        <div class="container">
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("HOME", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="menuRight">@Html.ActionLink("Enroll", "Create", "Students")</li>
+                        <li class="menuRight">@Html.ActionLink("About", "About", "Home")</li>
+                        <li class="menuRight">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="menuRight">@Html.ActionLink("Enroll", "Create", "Students")</li>
-                    <li class="menuRight">@Html.ActionLink("About", "About", "Home")</li>
-                    <li class="menuRight">@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+            @*<div class="jumbotron">
+                <div class="bbb"></div>
+                <div class="ccc">
+                    <h1>STUDENT ENROLLMENT</h1>
+                    <p class="lead">& REGISTRATION DATABASE</p>
+                </div>
+            </div>*@
+
         </div>
+
+        @*<div class="jumbotron1">
+            <div class="bbb"></div>
+            <div class="ccc">
+                <h1>STUDENT ENROLLMENT</h1>
+                <p class="lead">& REGISTRATION DATABASE</p>
+            </div>
+        </div>*@
+
+        <div class="container body-content">
+            <div class="pageTitle">
+                STUDENT REGISTRATION
+            </div>
+            @RenderBody()
+
+        </div>
+
+        @*<footer>
+                <p>&copy; @DateTime.Now.Year - Student Registration Application</p>
+            </footer>*@
+
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
     </div>
-    <div class="jumbotron">
-        <h1>STUDENT ENROLLMENT</h1>
-        <p class="lead">& REGISTRATION DATABASE</p>
-    </div>
-
-    <div class="container body-content">
-        @RenderBody()
-
-    </div>
-
-    @*<footer>
-        <p>&copy; @DateTime.Now.Year - Student Registration Application</p>
-    </footer>*@
-
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
 </body>
 </html>

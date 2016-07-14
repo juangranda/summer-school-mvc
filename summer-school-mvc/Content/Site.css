@@ -43,6 +43,14 @@ h2 .registration, a{
 h2 .registration, a:hover{
     color:darkgrey;
 }
+.registration{
+                -webkit-transition:all 0.3s;
+    transition:all 0.3s;
+}
+.registration:hover{
+        -webkit-transform:scale(1.1);
+    transform:scale(1.1);
+}
 .col-md-6{
     text-align:center;
 }
@@ -104,6 +112,21 @@ h4{
     text-align:center;
     letter-spacing:3px;
     opacity:.5;
+}
+.btn-light{
+    border-color:white;
+    font-size:11px;
+    border:2px solid;
+}
+.btn-default{
+    border-color:white;
+    border:2px solid;
+    text-align:center;
+}
+#indexTh{
+    font-weight:bold;
+    letter-spacing:3px;
+    color: rgb(190,190,190);
 }
 
 

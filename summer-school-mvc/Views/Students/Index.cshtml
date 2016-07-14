@@ -6,19 +6,24 @@
 
 <h3 id="masterList">MASTER LIST</h3>
     <p id="enrollNew">
-        @Html.ActionLink("Enroll new student", "Create")
+        @*@Html.ActionLink("Enroll new student", "Create")*@
+        <a href=@Url.Action("Create", "Students")><span class="btn btn-light scroll-top">Enroll new student</span></a>
     </p>
+
 <br />
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
+        <th id="indexTh">
+            @*@Html.DisplayNameFor(model => model.FirstName)*@
+            FIRST NAME
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LastName)
+            @*@Html.DisplayNameFor(model => model.LastName)*@
+            LAST NAME
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EnrollmentFee)
+            @*@Html.DisplayNameFor(model => model.EnrollmentFee)*@
+            FEE
         </th>
         <th></th>
     </tr>

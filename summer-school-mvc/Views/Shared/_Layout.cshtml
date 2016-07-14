@@ -23,29 +23,13 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="menuRight">@Html.ActionLink("Enroll", "Create", "Students")</li>
-                        <li class="menuRight">@Html.ActionLink("About", "About", "Home")</li>
+                        <li class="menuRight">@Html.ActionLink("View List", "Index", "Students")</li>
                         <li class="menuRight">@Html.ActionLink("Contact", "Contact", "Home")</li>
                     </ul>
                     @Html.Partial("_LoginPartial")
                 </div>
             </div>
-            @*<div class="jumbotron">
-                <div class="bbb"></div>
-                <div class="ccc">
-                    <h1>STUDENT ENROLLMENT</h1>
-                    <p class="lead">& REGISTRATION DATABASE</p>
-                </div>
-            </div>*@
-
         </div>
-
-        @*<div class="jumbotron1">
-            <div class="bbb"></div>
-            <div class="ccc">
-                <h1>STUDENT ENROLLMENT</h1>
-                <p class="lead">& REGISTRATION DATABASE</p>
-            </div>
-        </div>*@
 
         <div class="container body-content">
             <div class="pageTitle">
@@ -54,11 +38,6 @@
             @RenderBody()
 
         </div>
-
-        @*<footer>
-                <p>&copy; @DateTime.Now.Year - Student Registration Application</p>
-            </footer>*@
-
 
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")

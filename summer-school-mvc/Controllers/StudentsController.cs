@@ -17,6 +17,7 @@ namespace summer_school_mvc.Controllers
         // GET: Students
         public ActionResult Index(string sortColumn, string searchString)
         {
+            // Search bar
             var students = from item in db.Students
                            select item;
 
@@ -27,7 +28,8 @@ namespace summer_school_mvc.Controllers
                                  item.FirstName.Contains(searchString)
                            select item;
             }
-
+           
+            // Display names in alphabetical oder (Asc or Desc)
             switch (sortColumn)
             {
                 case "FirstName":
@@ -51,9 +53,7 @@ namespace summer_school_mvc.Controllers
                                orderby item.LastName
                                select item;
                     break;
-
             }
-
 
             ViewBag.Sum = db.Students.Sum(item => item.EnrollmentFee);
             int checkCount = db.Students.Count();
@@ -115,15 +115,22 @@ namespace summer_school_mvc.Controllers
             {
                 student.EnrollmentFee = Convert.ToInt32(student.EnrollmentFee * .5);
             }
-
             if ((student.LastName.ToLower()).Contains("malfoy"))
             {
                 ViewBag.malfoy = "true";
 
                 return View(student);
-
-                //student.EnrollmentFee = Convert.ToInt32(student.EnrollmentFee * .5);
             }
+
+            if ((student.LastName.ToLower()).Contains("tom") ||
+                (student.LastName.ToLower()).Contains("riddle") ||
+                (student.LastName.ToLower()).Contains("voldemort"))
+            {
+                ViewBag.notNamed = "true";
+
+                return View(student);
+            }
+
             if ((student.LastName.ToLower()).Contains("longbottom"))
             {
                 if (checkCount < 4)

@@ -145,6 +145,11 @@ li.dropdown:hover > ul.dropdown-menu{
 .searchbar{
     text-align:right;
 }
+.editText{
+    padding-left:50px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
 
 
 

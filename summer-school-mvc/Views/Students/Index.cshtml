@@ -30,8 +30,8 @@
         </th>
         <th>
             <!--LAST NAME-->
-            @Html.ActionLink("LAST NAME", "Index", new { sortColumn = "LastName" })
-            @Html.ActionLink("^", "Index", new { sortColumn = "LastNameRev" })
+    @Html.ActionLink("LAST NAME", "Index", new { sortColumn = "LastName" })
+    @Html.ActionLink("^", "Index", new { sortColumn = "LastNameRev" })
         </th>
         <th>
             FEE
@@ -52,7 +52,6 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.StudentID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.StudentID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.StudentID })
         </td>
     </tr>

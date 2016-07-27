@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<!--Modal for Tom, Riddle, Voldemort ("HEWHO MUST NOT ME NAMED")-->
+<!--Modal for MALFOY-->
 @if (ViewBag.malfoy == "true")
 {
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -12,10 +12,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Voldemort</h4>
+                    <h4 class="modal-title" id="myModalLabel">MALFOY</h4>
                 </div>
                 <div class="modal-body">
-                    HE WHO MUST NOT BE NAMED!!!
+                    Students with the last name Malfoy are not to be registered.
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
                     </div>
@@ -26,11 +26,36 @@
     ViewBag.malfoy = false;
     ViewBag.closedEnrollment = "false";
 }
+
+
+<!--Modal for Tom, Riddle, Voldemort ("HEWHO MUST NOT ME NAMED")-->
+@if (ViewBag.notNamed == "true")
+{
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">RED ALERT!!</h4>
+                </div>
+                <div class="modal-body">
+                    HE WHO MUST NOT BE NAMED!!!
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    ViewBag.notNamed = false;
+    ViewBag.closedEnrollment = "false";
+}
 <!--End modal-->
 <!--Registration closed if student count is 15 or more-->
 @if (ViewBag.closedEnrollment == "true")
 {
-    <h2>enrollment closed!!!</h2>
+    <h2>Enrollment is closed.</h2>
+    <hr />
 }
 
 <!--Regitration is open student count is under 15-->

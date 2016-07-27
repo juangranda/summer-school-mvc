@@ -15,8 +15,46 @@ namespace summer_school_mvc.Controllers
         private SummerSchoolMVCEntities db = new SummerSchoolMVCEntities();
 
         // GET: Students
-        public ActionResult Index()
+        public ActionResult Index(string sortColumn, string searchString)
         {
+            var students = from item in db.Students
+                           select item;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = from item in students
+                           where item.LastName.Contains(searchString) ||
+                                 item.FirstName.Contains(searchString)
+                           select item;
+            }
+
+            switch (sortColumn)
+            {
+                case "FirstName":
+                    students = from item in students
+                               orderby item.FirstName
+                               select item;
+                    break;
+                case "FirstNameRev":
+                    students = from item in students
+                               orderby item.FirstName descending
+                               select item;
+                    break;
+                case "LastNameRev":
+                    students = from item in students
+                               orderby item.LastName descending
+                               select item;
+                    break;
+                case "LastName":
+                default:
+                    students = from item in students
+                               orderby item.LastName
+                               select item;
+                    break;
+
+            }
+
+
             ViewBag.Sum = db.Students.Sum(item => item.EnrollmentFee);
             int checkCount = db.Students.Count();
             ViewBag.closedEnrollment = "false";
@@ -24,7 +62,7 @@ namespace summer_school_mvc.Controllers
             {
                 ViewBag.closedEnrollment = "true";
             }
-            return View(db.Students.ToList());
+            return View(students);
         }
 
         // GET: Students/Details/5

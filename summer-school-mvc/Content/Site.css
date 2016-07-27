@@ -142,6 +142,9 @@ h4{
 li.dropdown:hover > ul.dropdown-menu{
     display:block;
 }
+.searchbar{
+    text-align:right;
+}
 
 
 

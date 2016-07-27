@@ -5,7 +5,13 @@
 }
 
 <h3 id="masterList">MASTER LIST</h3>
-
+@using (Html.BeginForm())
+{
+    <p class = "searchbar">
+        Search for: @Html.TextBox("searchString")
+        <input type="submit" value="Search" />
+    </p>
+}
 <!--Enrolment button out if more than 15 students are registered-->
 @if (ViewBag.closedEnrollment == "false")
 {
@@ -18,10 +24,14 @@
 <table class="table">
     <tr>
         <th id="indexTh">
-            FIRST NAME
+            <!--FIRST NAME-->
+            @Html.ActionLink("FIRST NAME", "Index", new { sortColumn = "FirstName" })
+            @Html.ActionLink("^", "Index", new { sortColumn = "FirstNameRev" })
         </th>
         <th>
-            LAST NAME
+            <!--LAST NAME-->
+            @Html.ActionLink("LAST NAME", "Index", new { sortColumn = "LastName" })
+            @Html.ActionLink("^", "Index", new { sortColumn = "LastNameRev" })
         </th>
         <th>
             FEE

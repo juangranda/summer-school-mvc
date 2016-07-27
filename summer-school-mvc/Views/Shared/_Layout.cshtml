@@ -10,6 +10,7 @@
 </head>
 <body>
     <div class="hero-unit">
+        <!--navbar-->
         <div class="container">
             <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="navbar-header">
@@ -25,23 +26,42 @@
                         <li class="menuRight">@Html.ActionLink("Enroll", "Create", "Students")</li>
                         <li class="menuRight">@Html.ActionLink("View List", "Index", "Students")</li>
                         <li class="menuRight">@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+
                     </ul>
                     @Html.Partial("_LoginPartial")
                 </div>
             </div>
         </div>
-
+        <!--end of navbar-->
         <div class="container body-content">
             <div class="pageTitle">
                 STUDENT REGISTRATION
             </div>
             @RenderBody()
 
-        </div>
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)
+            <!--script for Tom, Riddle, Voldemort Modal ("HE WHO MUST NOT BE NAMED")-->
+            <script type="text/javascript">
+                $('#myModal').modal('show')
+            </script>
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
+        </div>
     </div>
+
 </body>
 </html>

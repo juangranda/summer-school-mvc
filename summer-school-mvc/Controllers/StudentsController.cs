@@ -17,6 +17,13 @@ namespace summer_school_mvc.Controllers
         // GET: Students
         public ActionResult Index()
         {
+            ViewBag.Sum = db.Students.Sum(item => item.EnrollmentFee);
+            int checkCount = db.Students.Count();
+            ViewBag.closedEnrollment = "false";
+            if (checkCount >= 15)
+            {
+                ViewBag.closedEnrollment = "true";
+            }
             return View(db.Students.ToList());
         }
 
@@ -33,11 +40,19 @@ namespace summer_school_mvc.Controllers
                 return HttpNotFound();
             }
             return View(student);
+            
         }
 
         // GET: Students/Create
         public ActionResult Create()
         {
+            int checkCount = db.Students.Count();
+            ViewBag.closedEnrollment = "false";
+            if (checkCount >= 15)
+            {
+                ViewBag.closedEnrollment = "true";
+            }
+
             return View();
         }
 
@@ -46,7 +61,6 @@ namespace summer_school_mvc.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-
         
         //public ActionResult Create([Bind(Include = "StudentID,FirstName,LastName,EnrollmentFee")] Student student)
         public ActionResult Create([Bind(Include = "StudentID,FirstName,LastName")] Student student)
@@ -58,9 +72,20 @@ namespace summer_school_mvc.Controllers
             {
                 student.EnrollmentFee = Convert.ToInt32(student.EnrollmentFee * .9);
             }
+
             if ((student.LastName.ToLower()).Contains("potter"))
             {
                 student.EnrollmentFee = Convert.ToInt32(student.EnrollmentFee * .5);
+            }
+
+            if ((student.LastName.ToLower()).Contains("malfoy"))
+            {
+                ViewBag.malfoy = "true";
+
+                return View(student);
+                //return RedirectToAction("Index");
+
+                //student.EnrollmentFee = Convert.ToInt32(student.EnrollmentFee * .5);
             }
             if ((student.LastName.ToLower()).Contains("longbottom"))
             {
@@ -73,7 +98,6 @@ namespace summer_school_mvc.Controllers
                     student.EnrollmentFee = Convert.ToInt32(student.EnrollmentFee);
                 }
             }
-
             if (ModelState.IsValid)
             {
                 db.Students.Add(student);

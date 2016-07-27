@@ -83,7 +83,6 @@ namespace summer_school_mvc.Controllers
                 ViewBag.malfoy = "true";
 
                 return View(student);
-                //return RedirectToAction("Index");
 
                 //student.EnrollmentFee = Convert.ToInt32(student.EnrollmentFee * .5);
             }
